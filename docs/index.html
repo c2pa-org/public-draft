@@ -639,7 +639,7 @@ pre.rouge {
 <h1>C2PA Technical Specifications</h1>
 <div class="details">
 <span id="revnumber"> PUBLIC DRAFT,</span>
-<span id="revdate">2021-08-29</span>
+<span id="revdate">2021-08-31</span>
 <br><span id="revremark">Draft Specification (0.7)</span>
 </div>
 <div id="toc" class="toc2">
@@ -751,9 +751,10 @@ pre.rouge {
 </li>
 <li><a href="#_user_experience">15. User Experience</a>
 <ul class="sectlevel2">
-<li><a href="#_principles">15.1. Principles</a></li>
-<li><a href="#_disclosure_levels">15.2. Disclosure Levels</a></li>
-<li><a href="#_common_applications_and_use_cases">15.3. Common Applications and Use Cases</a></li>
+<li><a href="#_approach">15.1. Approach</a></li>
+<li><a href="#_principles">15.2. Principles</a></li>
+<li><a href="#_disclosure_levels">15.3. Disclosure Levels</a></li>
+<li><a href="#_public_review_feedback_and_evolution">15.4. Public Review, Feedback and Evolution</a></li>
 </ul>
 </li>
 <li><a href="#_information_security">16. Information security</a>
@@ -796,6 +797,18 @@ pre.rouge {
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="imageblock text-center">
+<div class="content">
+<a class="image" href="http://creativecommons.org/licenses/by/4.0/"><img src="output/images/CCby4.png" alt="Creative Commons License"></a>
+</div>
+</div>
+<div class="paragraph text-center">
+<p>This work is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+</div>
+</div>
+</div>
 <!-- toc disabled -->
 </div>
 </div>
@@ -805,13 +818,35 @@ pre.rouge {
 <div class="sect2">
 <h3 id="_overview">1.1. Overview</h3>
 <div class="paragraph">
-<p>With the digital transformation of information sharing, the ability to trace the provenance of media has become critical. To address this issue at scale for publishers, creators and consumers, the Coalition for Content Provenance and Authenticity (C2PA) has developed this technical specification for establishing content provenance and authenticity. This specification has been, and continues to be, informed by scenarios, workflows and requirements gathered from industry experts and partner organizations, including the <a href="https://www.originproject.info/">Project Origin Alliance</a> and the <a href="https://contentauthenticity.org/">Content Authenticity Initiative (CAI)</a>.</p>
+<p>With the digital transformation of information sharing, establishing the provenance of media has become critical. To address this issue at scale for publishers, creators and consumers, the Coalition for Content Provenance and Authenticity (C2PA) has developed this technical specification for providing content provenance and authenticity. This specification has been, and continues to be, informed by scenarios, workflows and requirements gathered from industry experts and partner organizations, including the <a href="https://www.originproject.info/">Project Origin Alliance</a> and the <a href="https://contentauthenticity.org/">Content Authenticity Initiative (CAI)</a>.</p>
 </div>
 <div class="paragraph">
-<p>This specification is designed to enable global adoption of digital provenance techniques through the creation of a rich ecosystem of digital provenance enabled applications that can be utilized by creators, publishers, media consumers, regulatory bodies, and governmental agencies.</p>
+<p>This specification is designed to enable global, opt-in, adoption of digital provenance techniques through the creation of a rich ecosystem of digital provenance enabled applications for a wide range of individuals and organizations while meeting appropriate security requirements. It is also possible that regulatory bodies and governmental agencies could utilize this specification to establish standards for digital provenance.</p>
 </div>
 <div class="paragraph">
-<p>In developing this specification, the C2PA is focused on ensuring that it can be used in ways that respect privacy and personal control of data. In addition, this specification promotes tool availability for a wide range of organizations while meeting appropriate security requirements. Additionally, it is important that the specification does not negatively impact content accessibility for consumers.</p>
+<p>Prior to developing this specification, the C2PA created our <a href="https://c2pa.org/principles/">Guiding Principles</a> that enabled us to remain focused on ensuring that the specification can be used in ways that respect privacy and personal control of data with a critical eye toward potential abuse and misuse. For example, the creators and publishers of the media assets always have control over whether provenance data is included as well as what specific pieces of data are included.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>From the overarching goals section of the guiding principles:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>C2PA specifications SHOULD NOT provide value judgments about whether a given set of provenance data is 'good' or 'bad,' merely whether the assertions included within can be verified as associated with the underlying asset, correctly formed, and free from tampering.</pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>It is important that the specification does not negatively impact content accessibility for consumers.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1323,10 +1358,10 @@ label = 1*("." 1(ALPHA / "_" ) *( DIGIT / ALPHA / "_" ) )</code></pre>
 <div class="sect2">
 <h3 id="_versioning">5.3. Versioning</h3>
 <div class="paragraph">
-<p>When an assertion’s schema is changed, it should be done in a backwards-compatible manner. This means that new fields may be added and existing ones may be marked as deprecated (ie. can be read, but never written), but existing fields shall not be removed. The label would now consist of an incremented version number, for example moving from <code>c2pa.ingredient</code> to <code>c2pa.ingredient.v2</code>.</p>
+<p>When an assertion’s schema is changed, it should be done in a backwards-compatible manner. This means that new fields may be added and existing ones may be marked as deprecated (i.e., can be read, but never written). Existing fields shall not be removed. The label would then consist of an incremented version number, for example moving from <code>c2pa.ingredient</code> to <code>c2pa.ingredient.v2</code>.</p>
 </div>
 <div class="paragraph">
-<p>Deprecated fields for C2PA standard assertions shall be indicated in <a href="#_c2pa_standard_assertions">Chapter 17, <em>C2PA Standard Assertions</em></a>. Tools which enable actors to create assertions shall prevent the actor from inserting data into deprectated assertion fields.</p>
+<p>Deprecated fields for C2PA standard assertions shall be indicated in <a href="#_c2pa_standard_assertions">Chapter 17, <em>C2PA Standard Assertions</em></a>. Tools which enable actors to create assertions shall prevent the actor from inserting data into deprecated assertion fields.</p>
 </div>
 <div class="paragraph">
 <p>In addition, there are situations where a non-backwards compatible change is required. In that case, instead of increasing the label’s version number, the assertion shall be given a new label. For example, <code>c2pa.ingredient</code> could be changed to the fictional <code>c2pa.component</code>.</p>
@@ -1359,16 +1394,27 @@ label = 1*("." 1(ALPHA / "_" ) *( DIGIT / ALPHA / "_" ) )</code></pre>
 <div class="sect2">
 <h3 id="_redaction_of_assertions">5.7. Redaction of Assertions</h3>
 <div class="paragraph">
-<p>Assertions that are present in an asset-embedded assertion store (regardless of whether their data is embedded or not) may be removed from future versions of the asset. This process is called redaction.</p>
+<p>Assertions that are present in an asset-embedded manifest may be removed from that asset&#8217;s manifest when the asset is <a href="#_ingredient_storage">used as an ingredient</a>. This process is called redaction.</p>
 </div>
 <div class="paragraph">
-<p>When an assertion is redacted, then either the redacted assertion is removed from the assertion store, or the labeled assertion container is retained but the assertion data itself is replaced with zeros.</p>
+<p>Redaction involves removing either the entire assertion from the manifest&#8217;s assertion store or retaining the labeled assertion container but replacing its data with zeros (binary <code>\0</code> values). In addition, a record that something was removed must be added to the <a href="#_claims">claim</a> in the form of a <a href="#_uri_references">URI reference</a> to the redaction assertion in the <code>redacted_assertions</code> field of the claim.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Because each assertion’s <a href="#_uri_references">URI reference</a> includes the assertion label, it is also known what type of information (e.g., thumbnail, IPTC metadata, etc.) was removed. This enables both humans and machines to apply rules to determine if the removal was acceptable.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Neither authoring tools nor claims generators shall redact assertions with a label of <code>c2pa.action</code> as this assertion type represents essential information in understanding the history of an asset. Additionally, such tools should take care not to redact assertions when they believe a human actor has a clear intention about its continued importance and propagation (e.g., <code>stds.schema-org.CreativeWork</code> assertions where the <code>copyright</code> fields have been filled out).</p>
-</div>
-<div class="paragraph">
-<p>As part of the process of redacting an assertion, a record that something was removed is added to the <a href="#_claims">claim</a>. Because each assertion’s <a href="#_uri_references">URI reference</a> includes the assertion label, it is also known what type of information (e.g., thumbnail, IPTC metadata, etc.) was removed. This enables both humans and machines to apply rules to determine if the removal was acceptable.</p>
+<p>Claims generators shall not redact assertions with a label of <code>c2pa.action</code> as this assertion type represents essential information in understanding the history of an asset.</p>
 </div>
 </div>
 </div>
@@ -1717,41 +1763,32 @@ We recommend that existing Exif, IPTC-IIM and/or XMP asset metadata be left unto
 <p>Because they serve a different purpose, a soft binding shall not be used as a <em>hard binding</em>.</p>
 </div>
 <div class="paragraph">
-<p>All soft bindings shall be generated using one of the algorithms listed as supported by the C2PA soft binding algorithm registry. This registry will define:</p>
+<p>All soft bindings shall be generated using one of the algorithms listed as supported by this specification. This section defines both:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>A list of algorithms that are allowed for generating soft bindings of new content as well as required for validating or locating existing content (the "allowed" list), and</p>
+<p>A list of algorithms that are allowed for generating soft bindings of new content as well as required for validating or locating existing content (the allowed list), and</p>
 </li>
 <li>
-<p>A list of algorithms that are required to be supported for validating or locating existing content but are not allowed for generating soft bindings of new content (the "deprecated" list).</p>
+<p>A list of algorithms that are required to be supported for validating or locating existing content but are not allowed for generating soft bindings of new content (the deprecated list).</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>This list will establish the allowed algorithms for creating a soft binding from the digital content of an asset (or part thereof) and a string algorithm identifier to be used as the algorithm identifier in the corresponding field.</p>
+<p>This list of allowed algorithms will define the string algorithm identifier to be used as the algorithm identifier in the corresponding field and the content types over which it is applicable. In cases where there are different versions of an algorithm, each will be defined using different string algorithm identifiers. Any technical documentation sufficient for the soft binding algorithm to be implemented should be referenced.</p>
 </div>
 <div class="paragraph">
-<p>Different versions of an algorithm must be defined using different string algorithm identifiers.</p>
+<p>Each algorithm should be defined along with the names and values of all parameters affecting the operation of that algorithm. When doing so, it shall describe the manner in which those parameters must be encoded within the <code>alg-params</code> field of the <a href="#_soft_binding">soft binding assertion</a>.  An algorithm that is instantiated over a different parameter set will be considered a different algorithm.</p>
 </div>
 <div class="paragraph">
-<p>An algorithm when described in the registry must define the content types over which it is applicable.</p>
-</div>
-<div class="paragraph">
-<p>An algorithm when described in the registry should reference technical documentation sufficient for the soft binding algorithm to be implemented.</p>
-</div>
-<div class="paragraph">
-<p>An algorithm when described in the registry should be defined along with the names and values of all parameters affecting the operation of that algorithm. When doing so, it shall describe the manner in which those parameters must be encoded within the <code>alg-params</code> field of the <a href="#_soft_binding">soft binding assertion</a>.  An algorithm that is instantiated over a different parameter set will be considered a different algorithm.</p>
-</div>
-<div class="paragraph">
-<p>An algorithm when described in the registry may also define an encoding scheme for specifying the portion of digital content over which a soft binding is computed (namely, the <code>extent</code> field of the <code>SOFTBINDING_SCOPE</code> structure within the <a href="#_soft_binding">soft binding assertion</a>.  An algorithm that encodes the <code>extent</code> differently will be considered a different algorithm.</p>
+<p>Each algorithm may also define an encoding scheme for specifying the portion of digital content over which a soft binding is computed (namely, the <code>extent</code> field of the <code>scope</code> object within the <a href="#_soft_binding">soft binding assertion</a>).  An algorithm that encodes the <code>extent</code> differently will be considered a different algorithm.</p>
 </div>
 <div class="paragraph">
 <p>It is recommended that the string identifiers for soft binding algorithms conform to how they are referred to in common practice.</p>
 </div>
 <div class="paragraph">
-<p>There are no soft binding algorithms recommended in this version of the specification.  If the C2PA&#8217;s soft binding hash algorithm registry has not yet been established, then the registry (the "bootstrap registry") shall contain an empty deprecated list and an empty allowed list.</p>
+<p>There are no soft binding algorithms defined in the approved list nor in the deprecated list in this version of the specification.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1794,7 +1831,7 @@ claim-map = {
   "dc:format": tstr, ; media type of the asset
   ? "dc:title": tstr .size (1..max-tstr-length), ; name of the asset,
   ? "instanceID": tstr .size (1..max-tstr-length), ; uniquely identifies a specific version of an asset
-  ? "redacted_assertions": [1* jumbf-uri-type], ; List of hashed URI references to the assertions of this claim
+  ? "redacted_assertions": [1* jumbf-uri-type], ; List of hashed URI references to the assertions of ingredient manifests being redacted
   ? "alg": tstr .size (1..max-tstr-length), ; A string identifying the cryptographic hash algorithm used to compute all data hash assertions listed in this claim unless otherwise overridden, taken from the C2PA data hash algorithm identifier registry. This provides the value for the 'alg' field in data-hash and hashed-uri structures contained in this claim
   ? "alg_soft": tstr .size (1..max-tstr-length), ; A string identifying the algorithm used to compute all soft binding assertions listed in this claim unless otherwise overridden, taken from the C2PA soft binding algorithm identifier registry."
 }
@@ -1975,20 +2012,8 @@ This provides the explicit binding of the claim to its signature.
 <pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;dcterms:provenance&gt;</span>self#jumbf=c2pa/acme:urn:uuid:F9168C5E-CEB2-4faa-B6BF-329BF39FA1E4<span class="nt">&lt;/dcterms:provenance&gt;</span></code></pre>
 </div>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-<div class="title">EDITORS NOTE</div>
 <div class="paragraph">
-<p>Other non-XMP-based methods will be defined here as they are developed.</p>
-</div>
-</td>
-</tr>
-</table>
+<p>When an asset does not contain XMP or the XMP does not have a <code>dcterms:provenance</code> key, then the manifest consumer should look inside the asset at the <a href="#_embedding_manifests_into_assets">standard locations for embedding manifests</a> to see if one is present.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2588,15 +2613,15 @@ Failing to include that field in the hash would enable the audio/video speed to 
 <div class="sect2">
 <h3 id="_hashing">12.1. Hashing</h3>
 <div class="paragraph">
-<p>All cryptographic hashes that are stored in C2PA data structures (e.g., claim or assertions) shall be generated using one of the hash algorithms listed as supported by the C2PA data hash algorithm registry (TBD). This registry will define:</p>
+<p>All cryptographic hashes that are stored in a C2PA manifest shall be generated using one of the hash algorithms as described in this section. This section defines both:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>A list of hash algorithms that are allowed for generating hashes of new content as well as required for validating hashes of existing content (the "allowed" list), and</p>
+<p>A list of hash algorithms that are allowed for generating hashes of new content as well as required for validating hashes of existing content (the allowed list), and</p>
 </li>
 <li>
-<p>A list of hash algorithms that are required to be supported for validating hashes of existing content but are not allowed for generating hashes of new content (the "deprecated" list).</p>
+<p>A list of hash algorithms that are required to be supported for validating hashes of existing content but are not allowed for generating hashes of new content (the deprecated list).</p>
 </li>
 </ul>
 </div>
@@ -2607,19 +2632,22 @@ Failing to include that field in the hash would enable the audio/video speed to 
 <div class="title">Note</div>
 </td>
 <td class="content">
-There is a separate registry for soft binding algorithms.
+This section does not govern algorithms used for soft bindings as described in <a href="#_soft_bindings">Section 8.3, &#8220;Soft Bindings&#8221;</a>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>An algorithm must appear in no more than one list. An algorithm that is instantiated over multiple output lengths will be considered different algorithms for this purpose, and each instantiation must be listed. If an algorithm does not appear in either list, it is forbidden and must not be used. Algorithms can be removed from the lists in order to implement forbidding an algorithm.</p>
+<p>An algorithm must appear in no more than one list. An algorithm that is instantiated over multiple output lengths (such as the various lengths of SHA2) will each be considered different algorithms, and each instantiation must be listed separately. If an algorithm does not appear in either list, it is forbidden and must not be used or supported. Algorithms can be removed from the lists in order to implement forbidding an algorithm. For this reason, implementations must not support additional algorithms on an optional basis.</p>
 </div>
 <div class="paragraph">
-<p>This list will establish the allowed algorithms for creating hashes and a string algorithm identifier to be used as the algorithm identifier in the corresponding field. The outputs of hash functions shall be stored as their binary values encoded into CBOR as byte strings (major type 2) with a declared length. Wherever a field contains the output of a hash function, an algorithm identifier string field shall be present within the same structure, or within an enclosing structure, to declare which algorithm was used. A hash algorithm identifier field should be present in exactly one of these places, but if more than one is present within the structure and its enclosing structures, the nearest identifier must be used. Nearest is defined first as an identifier that is a sibling field of the hash value, and then the immediately enclosing structure, up to the root structure.</p>
+<p>Implementers should consult this section in the current version of the specification when releasing software updates and ensure their supported algorithms conform to it.</p>
 </div>
 <div class="paragraph">
-<p>If the C2PA&#8217;s data hash algorithm registry has not yet been established, then the registry (the "bootstrap registry") shall contain an empty deprecated list, and the allowed list shall be:</p>
+<p>These lists establish the allowed algorithms for creating hashes and a string algorithm identifier to be used as the algorithm identifier (usually called <code>alg</code>) in the corresponding field of C2PA data structures. The outputs of hash functions shall be stored as their binary values encoded into CBOR as byte strings (major type 2) with a declared length. Wherever a field contains the output of a hash function, an algorithm identifier string field shall be present within the same structure, or within an enclosing structure, to declare which algorithm was used. A hash algorithm identifier field should be present in exactly one of these places, but if more than one is present within the structure and its enclosing structures, the nearest identifier must be used. Nearest is defined first as an identifier that is a sibling field of the hash value, and then the immediately enclosing structure, up to the root structure.</p>
+</div>
+<div class="paragraph">
+<p>The allowed list is:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2635,32 +2663,41 @@ There is a separate registry for soft binding algorithms.
 </ul>
 </div>
 <div class="paragraph">
-<p>It is recommended that the string identifiers for hash algorithms conform to how they are referred to in common practice although there is no set standard. In particular, in keeping with their description in <a href="https://datatracker.ietf.org/doc/html/rfc6234">RFC 6234</a>, the string identifiers for variants of SHA-2 are recommended to be "sha256," "sha384," and "sha512."</p>
-</div>
-<div class="paragraph">
-<p>When the C2PA data hash algorithm registry is established, the bootstrap registry shall have no effect as if it did not exist. Algorithms not present in the established data hash algorithm registry are not permitted regardless of their inclusion in the bootstrap registry.</p>
+<p>The deprecated list is empty.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_digital_signatures">12.2. Digital Signatures</h3>
 <div class="paragraph">
-<p>All digital signatures that are stored in a C2PA data structure (e.g., claim or assertion) shall be generated using one of the digital signature algorithms and key types listed as supported by the C2PA digital signature algorithm and key type registry (TBD). COSE groups digital signatures and key types together, and the registry will follow this pattern. This registry will define:</p>
+<p>All digital signatures that are stored in a C2PA manifest shall be generated using one of the digital signature algorithms and key types listed as described in this section. This section defines both:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>A list of digital signature algorithms and key types that are allowed for generating signatures of new content as well as required for validating signatures of existing content (the "allowed" list), and</p>
+<p>A list of digital signature algorithms and key types that are allowed for generating signatures of new content as well as required for validating signatures of existing content (the allowed list), and</p>
 </li>
 <li>
-<p>A list of digital signature algorithms and key types that are required to be supported for validating signatures of existing content but are not allowed for generating signatures of new context (the "deprecated" list).</p>
+<p>A list of digital signature algorithms and key types that are required to be supported for validating signatures of existing content but are not allowed for generating signatures of new context (the deprecated list).</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>This list will establish the allowed algorithms and key types by referencing an algorithm identifier from the relevant standards that define algorithms for COSE and their mappings to CBOR identifiers, including but not limited to RFC 8152 and RFC 8230. These standards also specify the hash algorithm used in the signature scheme. Nothing in <a href="#_hashing">Section 12.1, &#8220;Hashing&#8221;</a> shall apply to this use of hash algorithms; if a digital signature algorithm is present in the digital signature algorithm and key type registry, the use of its specified hash algorithm in the signature scheme shall be allowed and followed.</p>
+<p>These lists establish the allowed algorithms and key types by referencing an algorithm identifier from the relevant standards that define algorithms for COSE and their mappings to CBOR identifiers, including but not limited to <a href="https://tools.ietf.org/html/rfc8152">RFC 8152</a> and <a href="https://datatracker.ietf.org/doc/html/rfc8230/">RFC 8230</a>. These standards also specify the hash algorithm used in the signature scheme. Nothing in <a href="#_hashing">Section 12.1, &#8220;Hashing&#8221;</a> shall apply to this use of hash algorithms; if a digital signature algorithm is present in the digital signature algorithm and key type registry, the use of its specified hash algorithm in the signature scheme shall be allowed and followed.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Parenthetical notes in the lists below are explainers provided only as an aid to the reader.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>If the digital signature algorithm and key type registry has not yet been established, then the registry (the "bootstrap registry") of digital signature algorithm and key type identifiers shall be an empty deprecated list, and the allowed list shall be as follows. The parenthetical notes are explainers provided only as an aid to the reader.</p>
+<p>The allowed list is:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2685,7 +2722,7 @@ There is a separate registry for soft binding algorithms.
 </ul>
 </div>
 <div class="paragraph">
-<p>When the C2PA digital signature algorithm and key type registry is established, the bootstrap registry shall have no effect as if it did not exist. Algorithms not present in the established digital signature algorithm and key type registry are not permitted regardless of their inclusion in the bootstrap registry.</p>
+<p>The deprecated list is empty.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2695,7 +2732,7 @@ There is a separate registry for soft binding algorithms.
 </td>
 <td class="content">
 <div class="paragraph">
-<p>This list intentionally excludes RS256, RS384, and RS512 which are the RSA variants that use PKCS#1v1.5 instead of PSS as the signature scheme. Though nothing precludes these algorithms from being added to the C2PA supported list when it is established, with no requirement to support legacy code, the problems with PKCS#1v1.5 signature due to Bleichenbacher&#8217;s attack are best avoided.</p>
+<p>This list intentionally excludes RS256, RS384, and RS512 which are the RSA variants that use PKCS#1v1.5 instead of PSS as the signature scheme. Though nothing precludes these algorithms from being added to the C2PA supported list in later revisions of the specification, but with no requirement to support legacy code, the problems with PKCS#1v1.5 signature due to Bleichenbacher&#8217;s attack are best avoided.</p>
 </div>
 </td>
 </tr>
@@ -3165,29 +3202,25 @@ When a signer&#8217;s credential is revoked, this does not invalidate manifests 
 </div>
 <div class="sect2">
 <h3 id="_validate_the_assertions_in_the_assets_claim">14.5. Validate the Assertions in the Asset&#8217;s Claim</h3>
+<div class="sect3">
+<h4 id="_preparing_the_list_of_redacted_assertions">14.5.1. Preparing the list of redacted assertions</h4>
 <div class="paragraph">
-<p>Each assertion in the <code>assertions</code> field of the claim is a <code>hashed_uri</code> structure. If the active manifest&#8217;s claim is being validated, the <code>active_redacted_assertions</code> list is empty. If an ingredient claim is being validated, the <code>active_redacted_assertions</code> list is an input to this recursive call. For each assertion, the validator must:</p>
+<p>For each manifest, there may be a set of its assertions that were redacted from it. The list of those assertions is not found in the manifest itself but instead in a manifest that references it as an ingredient. Therefore a validator, when processing a claim, shall gather the set of redacted assertion for each ingredient manifest based on the <code>hashed_uri`s listed in the `redacted_assertions</code> field.  A claim&#8217;s <code>redacted_assertions</code> field shall never include a <code>hashed_uri</code> to any of its own assertions.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_assertion_validation">14.5.2. Assertion Validation</h4>
+<div class="paragraph">
+<p>Each assertion in the <code>assertions</code> field of the claim is a <code>hashed_uri</code> structure. For each assertion, the validator must:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>If the URI reference in the <code>url</code> field is present in the <code>active_redacted_assertions</code> list:</p>
+<p>If the URI reference in the <code>url</code> field is in the <a href="#_preparing_the_list_of_redacted_assertions">list of redacted assertions</a>:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>If the assertion&#8217;s label is <code>c2pa.action</code>, the claim must be rejected.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-<code>c2pa.action</code> assertions may not be redacted.
-</td>
-</tr>
-</table>
-</div>
+<p>If the assertion&#8217;s label is <code>c2pa.action</code>, the claim must be rejected as <code>c2pa.action</code> assertions shall not be redacted.</p>
 </li>
 <li>
 <p>Otherwise, the redacted assertion is considered valid, and validation continues to the next assertion.</p>
@@ -3196,7 +3229,7 @@ When a signer&#8217;s credential is revoked, this does not invalidate manifests 
 </div>
 </li>
 <li>
-<p>Otherwise, since the assertion is not redacted:</p>
+<p>For all other assertions:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -3237,7 +3270,7 @@ When a signer&#8217;s credential is revoked, this does not invalidate manifests 
 </ol>
 </div>
 <div class="paragraph">
-<p>Then, for each element of the claim&#8217;s own <code>redacted_assertions</code> array, if any element of the claim&#8217;s <code>assertions</code> array has a <code>url</code> field equal to that value, the claim must be rejected. A claim cannot redact its own assertions, only those of any ingredients.</p>
+<p>Then, for each element of the claim&#8217;s own <code>redacted_assertions</code> array, if any element of the claim&#8217;s <code>assertions</code> array has a <code>url</code> field equal to that value, the claim must be rejected. A claim cannot redact its own assertions, only those of its ingredients.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3250,6 +3283,7 @@ As described in <a href="#_w3c_verifiable_credentials">Chapter 7, <em>W3C Verifi
 </td>
 </tr>
 </table>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -3275,11 +3309,14 @@ As described in <a href="#_w3c_verifiable_credentials">Chapter 7, <em>W3C Verifi
 <div class="ulist">
 <ul>
 <li>
-<p>If the ingredient does not have a <code>c2pa_manifest</code> field, the ingredient is accepted. Otherwise:</p>
+<p>If the ingredient does not have a <code>c2pa_manifest</code> field, the ingredient is accepted.</p>
+</li>
+<li>
+<p>If the ingredient does have a <code>c2pa_manifest</code> field:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Create an <code>active_redacted_assertions</code> list which is the concatenation of the claim&#8217;s <code>redacted_assertions</code> array with any pre-existing <code>active_redacted_assertions</code> list from previous recursive calls. This list is therefore only the redacted assertions from the active manifest&#8217;s claim and any ingredients along the path to the current ingredient.</p>
+<p>Create an <a href="#_preparing_the_list_of_redacted_assertions">list of redacted assertions</a> which is the concatenation of the claim&#8217;s <code>redacted_assertions</code> array with any pre-existing redacted assertions list from previous recursive calls. This list is therefore only the redacted assertions from the active manifest&#8217;s claim and any ingredients along the path to the current ingredient.</p>
 </li>
 <li>
 <p>Resolve the URI reference in the <code>url</code> field to obtain the ingredient claim&#8217;s manifest. If the URI reference cannot be resolved, the ingredient claim is rejected. If the URI reference refers to an external location, and a temporary failure prevents retrieval of the claim, the claim cannot be accepted until it is retrieved. The validator may indicate this temporary failure status.</p>
@@ -3292,7 +3329,7 @@ As described in <a href="#_w3c_verifiable_credentials">Chapter 7, <em>W3C Verifi
 <p>If an <code>alg</code> field is present in the <code>hashed_uri</code> structure, that determines the hash algorithm.</p>
 </li>
 <li>
-<p>If an <code>alg</code> field is not present in the <code>hashed_uri</code> strcuture, an <code>alg</code> field must be present in an enclosing structure, and the nearest instance present determines the hash algorithm.</p>
+<p>If an <code>alg</code> field is not present in the <code>hashed_uri</code> structure, an <code>alg</code> field must be present in an enclosing structure, and the nearest instance present determines the hash algorithm.</p>
 </li>
 <li>
 <p>If no <code>alg</code> field is found in any of these locations, the claim must be rejected.</p>
@@ -3326,7 +3363,7 @@ The presence of a non-empty <code>reviewRatings</code> is an explicit statement 
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>When validating the assertions as described in <a href="#_validate_the_assertions_in_the_assets_claim">Section 14.5, &#8220;Validate the Assertions in the Asset&#8217;s Claim&#8221;</a>, provide <code>active_redacted_assertions</code> as an input.</p>
+<p>When validating the assertions as described in <a href="#_validate_the_assertions_in_the_assets_claim">Section 14.5, &#8220;Validate the Assertions in the Asset&#8217;s Claim&#8221;</a>, provide a <a href="#_preparing_the_list_of_redacted_assertions">list of redacted assertions</a> as an input.</p>
 </li>
 <li>
 <p>The validator may optionally recursively verify the ingredient&#8217;s ingredients. If it does and those are accepted, the ingredient&#8217;s claim is accepted. If any are rejected, the ingredient&#8217;s claim is rejected. If the validator chooses not to recurse further, the ingredient&#8217;s claim is accepted.</p>
@@ -3376,12 +3413,15 @@ The presence of a non-empty <code>reviewRatings</code> is an explicit statement 
 <h2 id="_user_experience">15. User Experience</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_principles">15.1. Principles</h3>
+<h3 id="_approach">15.1. Approach</h3>
 <div class="paragraph">
-<p>C2PA user experience recommendations aim to define best practices for presenting the provenance captured in C2PA systems to consumers. These recommendations are provided as a companion document to this specification (TODO: create link to UX Recommendations).</p>
+<p>The C2PA intends to provide clear recommendations and guidance for implementers of provenance-enabled user experiences (UX). Developing these recommendations is an ongoing process that involves diverse stakeholders, with the results balancing uniformity and familiarity with utility and flexibility for users across contexts, platforms, and devices. These recommendations will be provided as a companion document.</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_principles">15.2. Principles</h3>
 <div class="paragraph">
-<p>These recommendations strive to describe standard, readily recognizable experiences that:</p>
+<p>The UX recommendations aim to define best practices for presenting C2PA provenance to consumers. The recommendations strive to describe standard, readily recognizable experiences that:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3389,23 +3429,23 @@ The presence of a non-empty <code>reviewRatings</code> is an explicit statement 
 <p>provide asset creators a means to capture information and history about the content they are creating, and</p>
 </li>
 <li>
-<p>provide asset consumers information and history about the content they&#8217;re experiencing, thereby empowering them to understand where it came from and decide how much to trust it.</p>
+<p>provide asset consumers information and history about the content they are experiencing, thereby empowering them to understand where it came from and decide how much to trust it.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>C2PA consumer user interfaces must be informed by the context of the asset for which they display C2PA data. We have studied 4 primary user groups and a collection of contexts in which C2PA assets are encountered. These user groups are Consumers, Creators, Publishers and Verifiers (or Investigators). To serve the needs of each of these groups across common contexts, exemplary wireframed user interfaces are presented for many common cases. These are recommendations, not mandates, and we expect best practices to evolve.</p>
+<p>User interfaces designed for the consumption of C2PA provenance must be informed by the context of the asset. We have studied 4 primary user groups and a collection of contexts in which C2PA assets are encountered. These user groups have been defined in the <a href="https://c2pa.org/principles/">C2PA Guiding Principles</a> as Consumers, Creators, Publishers and Verifiers (or Investigators). To serve the needs of each of these groups across common contexts, exemplary user interfaces are presented for many common cases. These are recommendations, not mandates, and we expect best practices to evolve.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_disclosure_levels">15.2. Disclosure Levels</h3>
+<h3 id="_disclosure_levels">15.3. Disclosure Levels</h3>
 <div class="paragraph">
 <p>Because the complete set of C2PA data for a given asset can be overwhelming to a user, we describe 4 levels of progressive disclosure which guide the designs:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Level 1: An indication that C2PA data is present and its cryptographic validation status. Should invite the user to learn more.</p>
+<p>Level 1: An indication that C2PA data is present and its cryptographic validation status.</p>
 </li>
 <li>
 <p>Level 2: A summary of C2PA data available for a given asset. Should provide enough information for the particular content, user, and context to allow the consumer to understand to a sufficient degree how the asset came to its current state.</p>
@@ -3420,9 +3460,9 @@ The presence of a non-empty <code>reviewRatings</code> is an explicit statement 
 </div>
 </div>
 <div class="sect2">
-<h3 id="_common_applications_and_use_cases">15.3. Common Applications and Use Cases</h3>
+<h3 id="_public_review_feedback_and_evolution">15.4. Public Review, Feedback and Evolution</h3>
 <div class="paragraph">
-<p>TODO: list the use cases that are in scope for the UX Recommendations document.</p>
+<p>The team authoring the UX recommendations is cognizant of its limitations and potential biases, recognizing that feedback, review, user testing and ongoing evolution is a key requirement for success. The recommendations will therefore be an evolving document, informed by real world experiences deploying C2PA UX across a wide variety of applications and scenarios.</p>
 </div>
 </div>
 </div>
@@ -3717,7 +3757,7 @@ Some of the questions we were attempting to answer were:</p>
 <div class="sect3">
 <h4 id="_harms_misuse_and_abuse_initial_assessment_overview">16.2.5. Harms, Misuse, and Abuse Initial Assessment - Overview</h4>
 <div class="paragraph">
-<p>The C2PA standard is still in the design stage, and reflects a system specification not a specific product, so the potential harms identified thus far reflect system-level considerations that may not be relevant for all products built using these specifications.</p>
+<p>The C2PA standard is still in the design stage, and reflects a system specification not a specific product, so the potential harms identified thus far reflect system-level considerations that may not be relevant for all products built using these specifications. A more detailed harms, misuse and abuse assessment will be continuously updated and be available for review through this <a href="https://c2pa.org/public-draft/Harms_Misuse_Abuse_Assessment.pdf">link</a>.</p>
 </div>
 <div class="paragraph">
 <p>In an effort to establish a common basis for an analysis and to guide our internal and now public discussions, we propose some scenarios based on three temporal stages of the development and adoption cycle of the C2PA standard. The assessment of the identified harms responds to each one of these scenarios.</p>
@@ -3987,7 +4027,11 @@ source-map = {
 int-range = 1..5
 
 $review-code /= "actions.unknownActionsPerformed"
+$review-code /= "actions.missing"
+$review-code /= "actions.possiblyMissing"
 $review-code /= "depthMap.sceneMismatch"
+$review-code /= "ingredient.modified"
+$review-code /= "ingredient.possiblyModified"
 $review-code /= "thumbnail.primaryMismatch"
 $review-code /= "stds.iptc.location.inaccurate"
 $review-code /= "stds.schema-org.CreativeWork.misattributed"
@@ -4131,7 +4175,11 @@ rating-map = {
         </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"actions.unknownActionsPerformed"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"actions.missing"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"actions.possiblyMissing"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"depthMap.sceneMismatch"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ingredient.modified"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ingredient.possiblyModified"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"thumbnail.primaryMismatch"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"stds.iptc.location.inaccurate"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"stds.schema-org.CreativeWork.misattributed"</span><span class="p">,</span><span class="w">
@@ -5617,17 +5665,8 @@ depth-meas-type = $depth-meas-choice .default "OpticalAxis"</code></pre>
 <div class="title">Note</div>
 </td>
 <td class="content">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-The redaction process works in such a way that only an entire assertion can be redacted (see <a href="#_redaction_of_assertions">Section 5.7, &#8220;Redaction of Assertions&#8221;</a>). If it is possible that future users may want to redact some information such as precise location, then it is recommended that multiple <code>stds.iptc.photo-metadata</code> assertions are generated. As described in <a href="#_multiple_instances">Section 5.4, &#8220;Multiple Instances&#8221;</a>, multiple instances of an assertion can be denoted by a double underscore and a monotonically-increasing number. For example, an assertion with label <code>stds.iptc.photo-metadata__1</code> could include the location properties, creator name or other information which may need to be redacted, and <code>stds.iptc.photo-metadata__2</code> can be used to include other asset metadata.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>The redaction process works in such a way that only an entire assertion can be redacted (see <a href="#_redaction_of_assertions">Section 5.7, &#8220;Redaction of Assertions&#8221;</a>). If it is possible that future users may want to redact some information such as precise location, then it is recommended that multiple <code>stds.iptc.photo-metadata</code> assertions are generated. As described in <a href="#_multiple_instances">Section 5.4, &#8220;Multiple Instances&#8221;</a>, multiple instances of an assertion can be denoted by a double underscore and a monotonically-increasing number. For example, an assertion with label <code>stds.iptc.photo-metadata__1</code> could include the location properties, creator name or other information which may need to be redacted, and <code>stds.iptc.photo-metadata__2</code> can be used to include other asset metadata.</p>
 </div>
 </td>
 </tr>
@@ -5989,6 +6028,9 @@ This schema does not validate all aspects of the referenced schema.org types (ju
 <li>
 <p>Extending the prevention of assertion redaction to assertions other than C2PA-defined actions.</p>
 </li>
+<li>
+<p>Evaluation of the current redaction model to determine if a lighter-weight alternative could be found that would serve for use cases such as selective disclosure, where only some assertions (or parts of assertions) would be exposed to a consumer. Additionally, it may be worthwhile to enable supporting redaction of only parts of an assertion (such as a single field of a <code>stds.exif</code> assertion).</p>
+</li>
 </ul>
 </div>
 </div>
@@ -6047,7 +6089,7 @@ This schema does not validate all aspects of the referenced schema.org types (ju
 <div id="footer">
 <div id="footer-text">
  PUBLIC DRAFT<br>
-Last updated 2021-08-29 16:37:19 UTC
+Last updated 2021-08-31 12:36:01 UTC
 </div>
 </div>
 </body>
