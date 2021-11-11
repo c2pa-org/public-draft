@@ -91,6 +91,7 @@
 
 	// Menu.
 		var $menu = $('#menu');
+		window.$menu = $menu;
 
 		$menu.wrapInner('<div class="inner"></div>');
 
