@@ -15,3 +15,8 @@ This work is licensed under a
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 
+## C2PA EasyCLA
+
+The C2PA Steering Committee has adopted IPR policies for [Individual](PREVIEW-C2PA_Non-Member_Agreement-Individual-Contributors.pdf) and [Corporate](./PREVIEW-C2PA-Corporate-Contributor-Agreement.pdf) contributors to C2PA working groups, repositories and work documents.
+
+The C2PA uses [EasyCLA](https://lfcla.com) to ensure that all contributors have [signed the appropriate documents](https://github.com/c2pa-org/easycla-bot#how-to-use-easycla) when contributing to this project. This tool was created and is maintained by the Linux Foundation, and has a number of features designed to support our project communities.
